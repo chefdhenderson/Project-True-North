@@ -1,3 +1,4 @@
+[README.md](https://github.com/user-attachments/files/30989081/README.md)
 # Project True North
 
 Wild Fork Canada — Merchant Command dashboard for the Canadian business unit.
@@ -64,6 +65,20 @@ When you build the "super backend" you mentioned, have it insert rows
 directly into the `uploads` table (via the Supabase service role key,
 server-side only — never expose that key in the browser) using the same
 shape the Admin form uses. Every tab will pick it up automatically.
+
+## Troubleshooting: "Error: supabaseUrl is required" on Vercel
+
+This means the build ran without your Supabase environment variables. It
+almost always means one of two things:
+
+1. **The env vars aren't in Vercel yet.** Go to your project in Vercel →
+   Settings → Environment Variables, and add both `NEXT_PUBLIC_SUPABASE_URL`
+   and `NEXT_PUBLIC_SUPABASE_ANON_KEY` (copy the values from Supabase →
+   Settings → API). Make sure the **Production** environment checkbox is
+   ticked for both.
+2. **They were added after the last build.** Adding env vars in Vercel does
+   not automatically retrigger a deployment. Go to the Deployments tab and
+   click **Redeploy** on the latest one (or push a new commit).
 
 ## Project structure
 
