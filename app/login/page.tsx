@@ -1,9 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Compass, Lock } from "lucide-react";
+import { Lock } from "lucide-react";
 import { supabase } from "@/lib/supabaseClient";
-import { CanadianFlag, Card, Input } from "@/components/ui";
+import { Card, Input } from "@/components/ui";
 
 export const dynamic = "force-dynamic";
 
@@ -34,12 +35,11 @@ export default function LoginPage() {
     <div className="min-h-screen w-full flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="flex flex-col items-center mb-6">
-          <CanadianFlag width={110} />
-          <div className="flex items-center gap-2 mt-5">
-            <Compass size={20} color="#D52B1E" />
+          <Image src="/canada-flag.png" alt="Canadian flag" width={110} height={55} priority />
+          <div className="flex items-center gap-2 mt-6">
+            <Image src="/wildfork-logo.png" alt="Wild Fork" width={26} height={27} priority />
             <span className="font-display font-bold text-ink text-xl tracking-wide">PROJECT TRUE NORTH</span>
           </div>
-          <div className="text-[11px] font-mono mt-1.5 tracking-wide text-muted">WILD FORK CANADA</div>
         </div>
 
         <Card className="p-6">
@@ -61,9 +61,6 @@ export default function LoginPage() {
             </button>
           </form>
         </Card>
-        <p className="text-center text-xs mt-4 text-[#B0B0B5]">
-          Access is limited to invited members of the Canadian business unit. Contact your admin for an account.
-        </p>
       </div>
     </div>
   );
