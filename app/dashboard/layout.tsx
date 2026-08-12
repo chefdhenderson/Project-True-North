@@ -11,6 +11,8 @@ import { FlagBars } from "@/components/ui";
 import { FOCUS_META } from "@/types";
 import type { Session } from "@supabase/supabase-js";
 
+export const dynamic = "force-dynamic";
+
 const ICONS: Record<string, any> = {
   assortment: PackagePlus, margin: DollarSign, fefo: Timer, pricing: Tags,
   sws: Store, commercial: Megaphone, pnl: FileBarChart,
