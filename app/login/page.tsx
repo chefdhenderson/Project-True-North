@@ -5,6 +5,8 @@ import { Compass, Lock } from "lucide-react";
 import { supabase } from "@/lib/supabaseClient";
 import { CanadianFlag, Card, Input } from "@/components/ui";
 
+export const dynamic = "force-dynamic";
+
 export default function LoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
