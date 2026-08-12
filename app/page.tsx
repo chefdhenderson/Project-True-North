@@ -1,7 +1,10 @@
+
 "use client";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
+
+export const dynamic = "force-dynamic";
 
 export default function Home() {
   const router = useRouter();
